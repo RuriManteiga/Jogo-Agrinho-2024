@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url('spr_ILUSTRAÇÃO_MENU.png'); /* Coloque a imagem de fundo desejada */
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-container {
+  position: relative;
+  width: 100%; /* Permite o posicionamento absoluto dentro do contêiner */
+  height: 100%;
+}
+
+.title {
+  position: absolute;
+  top: 10%; /* Ajuste a posição vertical */
+  right: 20px; /* Ajuste a posição horizontal */
+  max-width: 300px; /* Ajuste o tamanho conforme necessário */
+}
+
+.buttons {
+  position: absolute;
+  bottom: 50px; /* Ajuste para mover os botões para cima ou para baixo */
+  right: 20px; /* Ajuste para mover os botões para a esquerda ou para a direita */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  bottom: 20%;
+}
+
+.button {
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.credits-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#close-credits {
+  margin-top: 10px;
+}

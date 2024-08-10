@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.game {
+  border-bottom: 1px solid;
+  height: 300px;
+  width: 800px;
+  position: relative;
+  overflow: hidden;
+  background: 
+    url('spr_CENARIO_CHÃO.png') repeat-x, 
+    url('spr_CENARIO_1.png') repeat-x,  /* Camada 3: mais próxima */
+    url('spr_CENARIO_2.png') repeat-x,  /* Camada 2: intermediária */
+    url('spr_céu.png') repeat-x;  /* Camada 1: mais distante */
+  background-position: 
+    0 50px,
+    0 100px,  /* Posição da Camada 3 */
+    0 50px,   /* Posição da Camada 2 */
+    0 0;      /* Posição da Camada 1 */
+  background-size: 
+    200px 100px,
+    800px 300px,  /* Tamanho da Camada 3 */
+    800px 350px,  /* Tamanho da Camada 2 */
+    800px 400px;  /* Tamanho da Camada 1 */
+  animation: parallax-background 20s linear infinite;
+}
+
+@keyframes parallax-background {
+  0% {
+    background-position: 
+      0 220px, 
+      0 10px,  /* Posição inicial da Camada 3 */
+      0 30px,   /* Posição inicial da Camada 2 */
+      0 0;      /* Posição inicial da Camada 1 */
+  }
+  100% {
+    background-position:
+      -5750px 220px, 
+      -800px 10px,  /* Movimento da Camada 3 */
+      -200px 30px,  /* Movimento da Camada 2 */
+      -20px 0;     /* Movimento da Camada 1 */
+  }
+}
+
+
+.score {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  font-size: x-large;
+}
+
+
+.pia {
+  position: absolute;
+  bottom: 0;
+  left: 180px;
+  width: 60px; /* Largura dos sprites do personagem */
+  height: 100px; /* Altura dos sprites do personagem */
+  background-size: contain; /* Ajustado para o tamanho dos sprites */
+  background-repeat: no-repeat;
+}
+
+.pia-sprite1 {
+  background-image: url('spr_PERSONAGEM_PARADOA.png'); /* Sprite inicial da pia */
+}
+
+.pia-sprite2 {
+  background-image: url('spr_PERSONAGEM_CORRENDO_1A.png'); /* Sprite alternativo da pia */
+}
+
+.pia-sprite3 {
+  background-image: url('spr_PERSONAGEM_PARADOA.png'); /* Novo sprite alternativo da pia */
+}
+
+.pia-sprite4 {
+  background-image: url('spr_PERSONAGEM_CORRENDO_2B.png'); /* Novo sprite alternativo da pia */
+}
+
+.lixo {
+  position: absolute;
+  bottom: 0;
+  background-size: cover;
+  width: 80px;
+  height: 70px;
+  background-repeat: no-repeat;
+  animation: lixo 3s linear infinite;
+}
+
+.lixo-sprite1 {
+  background-image: url('spr_LIXO_1A.png');
+}
+
+.lixo-sprite2 {
+  background-image: url('spr_LIXO_2A.png');
+}
+
+.lixo-sprite3 {
+  background-image: url('spr_LIXO_3A.png');
+}
+
+.boss {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url('spr_BOSS.png');
+  width: 300px;
+  height: 200px;
+  background-size: 300px 200px;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+@keyframes lixo {
+  0% {
+    right: -80px; /* Ajusta a posição inicial do lixo */
+  }
+  100% {
+    right: 800px;
+  }
+}
+
+.jump {
+  animation: jump 1.1s linear;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 80px;
+  }
+  50% {
+    bottom: 100px;
+  }
+  80% {
+    bottom: 80px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.question-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.game-over {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#answers button {
+  display: block;
+  margin: 5px 0;
+}
+
+#enemy-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: yellow;
+  padding: 10px;
+  border: 1px solid black;
+  display: none;
+  z-index: 10;
+}
+
+.correct-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgreen;
+  padding: 10px;
+  border: 1px solid green;
+  font-size: large;
+  z-index: 10;
+}

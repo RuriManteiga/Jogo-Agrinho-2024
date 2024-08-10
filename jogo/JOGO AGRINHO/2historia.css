@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('spr_ILUSTRAÇÃO_MENU.png'); /* Coloque a imagem de fundo desejada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(100%);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.typing-container {
+    color: rgb(11, 129, 0);
+    font-size: 24px;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#skip-button, #start-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+#skip-button:hover, #start-button:hover {
+    background-color: #555;
+}
+
+#start-button {
+    display: none;
+}

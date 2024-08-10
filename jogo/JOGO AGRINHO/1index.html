@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agrinho's Game</title>
+  <link rel="stylesheet" href="2style.css">
+</head>
+<body>
+  <div class="game">
+    <span class="score"></span>
+    <div class="pia"></div>
+    <div class="lixo"></div>
+    <div class="boss"></div>
+  </div>
+
+  <div id="question-container" class="question-container">
+    <p id="question"></p>
+    <div id="answers"></div>
+  </div>
+
+  <div id="game-over" class="game-over">
+    <p>Você falhou!</p>
+    <p>Mas você pode melhorar na próxima vez!</p>
+    <p>Final Score: <span id="final-score"></span></p>
+    <button id="restart">Tente novamente</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
